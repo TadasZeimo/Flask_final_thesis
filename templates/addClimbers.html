@@ -3,16 +3,18 @@
 {% block content %}
 {{ super() }}
 
-<h5 style="margin-left: 20px">User loged:  {{ current_user.userName}} </h5>
-<h5 style="margin-left: 20px">User loged mail:  {{ current_user.email}} </h5>
-<label><a href="{{ url_for('logout')}}" style="margin-left: 20px">LOGOUT</a></label>
+<div class='user_login'>
+<h5 style="margin-right: 422px; margin-top: 5px">User loged:  {{ current_user.userName}} </h5>
+<h5 style="margin-right: 20px">User loged mail:  {{ current_user.email}} </h5>
+<label><a href="{{ url_for('logout')}}" style="margin-right: 20px">LOGOUT</a></label>
+</div>
 
 
-<form action="/addClimbers" method="post" class="form-add" enctype='multple/form-data'>
+<form action="/addClimbers" method="post" class="form-add" enctype='multple/form-data' style="margin-top: 5%">
 
 {{ form.hidden_tag() }}
 
-<p style="margin-bottom: 20px; font-size: x-large;">Enter information about climber:</p>
+<p style="margin-bottom: 20px; font-size: xx-large;">Enter information about climber:</p>
 
 {% for cat, msg in get_flashed_messages(True) %}
  <div class="flash {{cat}}">{{msg}}</div>   

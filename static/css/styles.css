@@ -33,16 +33,21 @@ ul.mainmenu li a:hover {
 /* # ---------------------------------------------------------------------------------------------------------------------------------- */
 
 .form-add {
-	margin: 50px 0px 0px 50px;
+	margin: 10% 0px 0px 35%;
+	font-size: x-large;
 }
 
 .form-add label {
 	display: inline-block; 
-	min-width: 110px;
+	min-width: 165px;
+	
 }
-.form-add p {margin: 10px 0 10px 0;}
+.form-add p {
+	margin: 10px 0 10px 0;
+}
+
 .form-add textarea {
-	font-size: 16px;
+	font-size: 28px;
 	margin-top: -25px;
 }
 /* # ---------------------------------------------------------------------------------------------------------------------------------- */
@@ -50,7 +55,7 @@ ul.mainmenu li a:hover {
 .flash {
 	padding: 10px;
 	margin-top: -10px;
-	width: 315px;
+	width: 473px;
 }
 .flash.success {
 	border: 1px solid #21DB56;
@@ -129,6 +134,8 @@ div.dataDB1 {
 	margin-left: 2%;
 }
 
-/* table.table, th, td {
 
-} */
+.user_login {
+	/* border: 2px red solid; */
+	text-align: right;
+}

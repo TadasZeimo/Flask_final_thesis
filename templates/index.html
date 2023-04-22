@@ -9,7 +9,7 @@
 
 {{ form.hidden_tag() }}
     
-<p style="margin-bottom: 20px; font-size: x-large;">Login:</p>
+<p style="margin-bottom: 20px; font-size: xx-large;">Login:</p>
     
 {% for cat, msg in get_flashed_messages(True) %}
 <div class="flash {{cat}}">{{msg}}</div>   
@@ -20,9 +20,9 @@
 <p>{{ form.chekbox.label() }} {{ form.chekbox(type="checkbox") }}</p>
     
     {{ form.submit }}
-<hr style="width:18rem;text-align:left;margin-left:0">
+<hr style="width:29rem;text-align:left;margin-left:0">
 <p>Only registered users can add information <br>
- about climbers or delete, edit data.</p>
+ about climbers.</p>
 <a href="{{ url_for('addUsers')}}">Register</a>
 
 {% endblock %}
