@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+
+{% for data in dataMountersDB %}
+{% if data.lname == title %}
+
+<h4>{{data.fname}} {{data.lname}}</h4>
+<p>{{data.biography | safe}}</p>
+
+{% endif %}
+{% endfor %}
+{% endblock %}

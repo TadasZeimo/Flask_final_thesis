@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %} {{ super() }}
+
+<h2 class="climbers-title">
+  Meeting a bad person in the mountains is just as likely as meeting a good
+  person in the city...
+</h2>
+
+<div class="dataMountersDB-card-base">
+{% for data in dataMountersDB %}
+
+  <div class="dataMountersDB-card">
+    <img src="{{data.fotoUrl}}" alt="photo not found" />
+    <h4>{{data.fname}} {{data.lname}}</h4>
+    <h4>Biography:</h4>
+    <p>
+      {{data.biography[:250] | safe}}
+      <a href="{{ url_for('article', title=data.lname)}}" target="_blank">
+        ...read more</a
+      >
+    </p>
+  </div>
+{% endfor %} 
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<form method="post" action="/update">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.userName.label() }} {{ form.userName(value=saveData.userName) }}
+    </div>
+ 
+    {{ form.submit }}
+</form>
+
+{% endblock %}

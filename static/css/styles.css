@@ -1,0 +1,134 @@
+html, body { 
+	font-family: 'Arial';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+/* # ---------------------------------------------------------------------------------------------------------------------------------- */
+ul.mainmenu {
+	list-style: none;
+	background: #D3D3D3;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	color: 	#008B8B;
+	font-size: 20px;
+	overflow: hidden;
+}
+ul.mainmenu li {
+	float: left;
+	margin: 18px 40px 0 50px;
+}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+	color: 	#008B8B;
+	text-decoration: none;
+}
+ul.mainmenu li a:hover {
+	color: #100955;
+}
+/* # ---------------------------------------------------------------------------------------------------------------------------------- */
+
+.form-add {
+	margin: 50px 0px 0px 50px;
+}
+
+.form-add label {
+	display: inline-block; 
+	min-width: 110px;
+}
+.form-add p {margin: 10px 0 10px 0;}
+.form-add textarea {
+	font-size: 16px;
+	margin-top: -25px;
+}
+/* # ---------------------------------------------------------------------------------------------------------------------------------- */
+
+.flash {
+	padding: 10px;
+	margin-top: -10px;
+	width: 315px;
+}
+.flash.success {
+	border: 1px solid #21DB56;
+	background: #AEFFC5;
+}
+.flash.error {
+	border: 1px solid #FF4343;
+	background: #FF9C9C;
+}
+/* # ---------------------------------------------------------------------------------------------------------------------------------- */
+
+ul.list-posts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.list-posts li {
+	margin: 20px 20px 50px 20px;
+}
+
+ul.list-posts .title {
+	padding: 20px 0px;
+	background: #E8F8F5;
+}
+ul.list-posts .list-data {
+	margin: 0;
+	padding: 10px 5px 10px 5px;
+}
+/* # ---------------------------------------------------------------------------------------------------------------------------------- */
+h2.climbers-title {
+	text-align: center;
+	margin: 2% 0%;
+}
+
+.dataMountersDB-card-base {
+	margin: 0% 2%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 3%;
+	
+}
+div.dataMountersDB-card {
+	width: 300px;
+	/* border: solid black; */
+	margin: 0% 0% 2% 0%;
+	box-shadow: 10px 10px rgb(180, 187, 190);
+}
+
+div.dataMountersDB-card img {
+	width: 100%;
+}
+
+div.dataMountersDB-card h4 {
+	margin-bottom: -10px;
+	padding-bottom: 0px;
+}
+
+div.dataMountersDB-card a {
+	text-decoration: none;
+}
+
+div.dataMountersDB-card a:hover {
+	color: #2cda09;
+}
+
+/* # ---------------------------------------------------------------------------------------------------------------------------------- */
+
+div.dataDB {
+	padding-top: 30px;
+	margin-left: 2%;
+}
+
+div.dataDB1 {
+	padding-top: 30px;
+	margin-left: 2%;
+}
+
+/* table.table, th, td {
+
+} */

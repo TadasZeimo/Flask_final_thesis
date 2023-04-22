@@ -1,0 +1,166 @@
+{% extends 'base.html' %} {% block content %} {{ super() }}
+
+<h5 style="margin-left: 20px">User loged:  {{ current_user.userName}} </h5>
+<h5 style="margin-left: 20px">User loged mail:  {{ current_user.email}} </h5>
+<label style='margin-left: 20px'><a href='/logout'>LOGOUT</a></label>
+
+<div class='dataDB' style="width:50%">
+
+  <!-- Users info -->
+
+  <h2>USERS</h2>
+
+  {% for cat, msg in get_flashed_messages(True) %}
+  <div class="flash {{cat}}">{{msg}}</div>    
+  {% endfor %}
+
+  <table class="table">
+    <tr>
+        <th>ID</th>
+        <th>USER NAME</th>
+        <th>EMAIL</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    
+    {% for data in UsersBD %}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.userName}}</td>
+            <td>{{data.email}}</td>
+            <td><a href='/updateUser/{{data.id}}' data-bs-toggle="modal" data-bs-target='#myModal{{data.id}}'>Edit</a></td> 
+            <td><a href='/deleteUser/{{data.id}}'>Delete</a></td>  
+        </tr>
+         <!-- The Modal -->
+      <div class="modal" id="myModal{{data.id}}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Update data</h5>
+            </div>
+     
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form action="{{url_for('updateUser')}}" method="post">
+              <div class="form-group">
+                <label> User name: </label>
+              <input type="hidden" name="id" value='{{data.id}}'>
+                <input type="text" class="form-control" name="userName" value='{{data.userName}}' required="1">
+              </div>
+              <div class="form-group">
+                <label> Email: </label>
+                <input type="text" class="form-control" name="email" value='{{data.email}}' required="1">
+              </div>
+
+                        <!-- Modal footer -->
+              <div class="modal-footer">
+                  <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">UPDATE</button>
+              </div>  
+
+          </form>
+          </div>
+    
+   
+      
+          </div>
+        </div>
+      </div>
+
+    {% endfor %} 
+  </table> 
+  
+     
+    
+</div>
+
+
+        
+    
+
+  
+
+<div class='dataDB1' style="width:90%">
+
+  <!-- Climbers info -->
+
+  <h2>CLIMBERS DATA</h2>
+
+  {% for cat, msg in get_flashed_messages(True) %}
+  <div class="flash {{cat}}">{{msg}}</div>   
+  {% endfor %}
+
+  <table class="table">
+      <tr>
+         <th>ID</th>
+         <th>FIRST NAME</th>
+         <th>LAST NAME</th>
+         <th>FOTO URL</th>
+         <th>BIOGRAPHY</th>
+         <th>EDIT</th>
+         <th>DELETE</th>
+      </tr>
+            
+      {% for data in MountersDB %}
+           <tr>
+              <td>{{data.id}}</td>
+              <td>{{data.fname}}</td>
+              <td>{{data.lname}}</td>
+              <td>{{data.fotoUrl[:50] | safe}}</td>
+              <td>{{data.biography[:100] | safe}}</td>
+              <td><a href="/updateClimber/{{data.id}}" data-bs-toggle="modal" data-bs-target="#myModall{{data.id}}">Edit</a></td> 
+              <td><a href='/deleteClimber/{{data.id}}'>Delete</a></td>  
+            </tr> 
+
+                                <!-- The Modal -->
+                <div class="modal" id="myModall{{data.id}}">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                  
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h5 class="modal-title">Update data</h5>
+                        </div>
+                 
+                      <!-- Modal body -->
+                    <div class="modal-body">
+                        <form method="post" action="{{url_for('updateClimber')}}">
+                          <div class="form-group">
+                            <label> First name: </label>
+                          <input type="hidden" name="id" value='{{data.id}}'>
+                            <input type="text" class="form-control" name="fname" value='{{data.fname}}' required="1">
+                          </div>
+                          <div class="form-group">
+                            <label> Last name: </label>
+                            <input type="text" class="form-control" name="lname" value='{{data.lname}}' required="1">
+                          </div>
+                          <div class="form-group">
+                            <label> Url foto: </label>
+                            <input type="text" class="form-control" name="fotoUrl" value='{{data.fotoUrl}}' required="1">
+                          </div>
+                          <div class="form-group">
+                            <label> Biography: </label>
+                            <textarea class="form-control" name="biography" required="1">{{data.biography}}</textarea>
+                          </div>
+                                                <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">UPDATE</button>
+                          </div>  
+                      </form>
+                      </div>
+                
+    
+                            </form>
+                        </div>
+                
+                
+                  
+                      </div>
+                    </div>
+
+      {% endfor %}  
+  </table>
+
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+
+ADMIN LOGIN: Admin
+ADMIN PASS: 123
+
+USER TEST LOGIN: User1
+USER TEST PASS: 1
+
+
+The page launches from 'routes.py' file.
+
+

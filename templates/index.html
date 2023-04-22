@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{ super() }}
+
+
+<form action="/index" method="post" class="form-add">
+
+{{ form.hidden_tag() }}
+    
+<p style="margin-bottom: 20px; font-size: x-large;">Login:</p>
+    
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>   
+{% endfor %}
+    
+<p>{{ form.userName.label() }} {{ form.userName() }}</p>
+<p>{{ form.password.label() }} {{ form.password() }}</p>
+<p>{{ form.chekbox.label() }} {{ form.chekbox(type="checkbox") }}</p>
+    
+    {{ form.submit }}
+<hr style="width:18rem;text-align:left;margin-left:0">
+<p>Only registered users can add information <br>
+ about climbers or delete, edit data.</p>
+<a href="{{ url_for('addUsers')}}">Register</a>
+
+{% endblock %}

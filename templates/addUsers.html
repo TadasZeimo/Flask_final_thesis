@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+
+
+<form action="/addUsers" method="post" class="form-add">
+
+{{ form.hidden_tag() }}
+
+<p style="margin-bottom: 20px; font-size: x-large;">Enter information about User:</p>
+
+{% for cat, msg in get_flashed_messages(True) %}
+ <div class="flash {{cat}}">{{msg}}</div>   
+{% endfor %}
+
+<p>{{ form.userName.label() }} {{ form.userName() }}</p>
+<p>{{ form.email.label() }} {{ form.email() }}</p>
+<p>{{ form.password1.label() }} {{ form.password1() }}</p>
+<p>{{ form.password2.label() }} {{ form.password2() }}</p>
+
+{{ form.submit }}
+
+</form>
+{% endblock %}

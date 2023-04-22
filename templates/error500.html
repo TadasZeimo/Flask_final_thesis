@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+  
+<h1 class="error-500">
+    Only registered users can add information about climbers. <br> 
+    Only administrator can delete, edit data.!!!
+</h1>
+
+{% endblock %}
